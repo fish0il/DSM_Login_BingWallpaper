@@ -66,10 +66,10 @@ else echo "savepath is not set, skip copy."
 fi
 
 echo "[x]Setting welcome msg..."
-sed -i 's/login_welcome_title=.*/login_welcome_title="${title}"/g' /etc/synoinfo.conf
-#echo "login_welcome_title=\"$title\"">>/etc/synoinfo.conf
-sed -i 's/login_welcome_msg=.*/login_welcome_msg="${copyright}"/g' /etc/synoinfo.conf
-#echo "login_welcome_msg=\"$copyright\"">>/etc/synoinfo.conf
+sed -i 's/login_welcome_title=.*//g' /etc/synoinfo.conf
+echo "login_welcome_title=\"$title\"">>/etc/synoinfo.conf
+sed -i 's/login_welcome_msg=.*//g' /etc/synoinfo.conf
+echo "login_welcome_msg=\"$copyright\"">>/etc/synoinfo.conf
 
 echo "[x]Applying login wallpaper..."
 sed -i 's/login_background_customize=.*/login_background_customize="yes"/g' /etc/synoinfo.conf
